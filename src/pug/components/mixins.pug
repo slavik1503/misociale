@@ -1,0 +1,87 @@
+-
+    let menu = [
+        {
+            href: "#",
+            name: "Home"
+        },
+        {
+            href: "#",
+            name: "Why MISOCIAL"
+        },
+        {
+            href: "#",
+            name: "Features"
+        },
+        {
+            href: "#",
+            name: "Articles"
+        },
+        {
+            href: "#",
+            name: "Pircing"
+        },
+    ]
+
+-
+    let cards = {
+        card1: {
+            src: "img/octo-cos.png",
+            alt: "satellite plan",
+            price: 0,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
+            href: "#",
+        },
+        card2: {
+            src: "img/cosmo.png",
+            alt: "mars",
+            price: 29,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
+            href: "#",
+        },
+        card3: {
+            src: "img/roccet.png",
+            alt: "roket",
+            price: 49,
+            description: [
+                "Lorem ipsum dolor sit amet.",
+                "sed do eiusmod tempor incididunt ut.",
+                "Labore et dolore magna aliqua.",
+                "quis nostrud exercitation ullamco laboris.",
+                "Ea commodo consequat."
+            ],
+            href: "#",
+        }
+    }
+
+mixin menu (item)
+    ul.links
+        each element in item 
+            li.li  
+                a(href=element.href)= element.name 
+
+mixin oneCard (item)
+    figure.card
+        figcaption 
+            .cardimg
+                .foto
+                    img(src=item.src, alt=item.alt)
+                p.personal PERSONAL
+                p.price= item.price
+                    span.span2 $
+                    span /month
+                .description
+                    each desc in item.description 
+                        p.description.last-p= desc
+                a(href=item.href).btn select plan

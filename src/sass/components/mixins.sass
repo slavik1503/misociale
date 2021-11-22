@@ -1,0 +1,65 @@
+@import components/vars
+
+=media ($size)
+    @media screen and ( min-width: #{$size}px )
+        @content
+
+=smallshadow
+    box-shadow: 0 0 10.5px rgba(204,204,223,0.5)
+
+=bigshadow
+    box-shadow: 0 0 46px rgba(204,204,223,0.71)
+
+=btn ($color) 
+    display: inline-block
+    margin: 0 5px
+    padding: 15px 30px
+    font-size: 10px
+    letter-spacing: 1px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    text-decoration: none
+    border-radius: 25px
+    transition: background .25s ease
+    &:hover
+        border-color: #6e45e2
+        background-color: #6e45e2
+    @if $color == "light"
+        color: $white
+        border: 1px solid $white
+    @else
+        width: 190px
+        border-rudius: 25px
+        color: $lightgrey
+        border: 1px solid $lightgrey
+        +smallshadow
+        &:hover
+            color: $white
+            box-shadow: 0 0 0 black
+
+=link
+    font-size: 16px
+    line-height: 1.19em
+    color: #ffffff
+    font-weight: 500
+    text-decoration: none
+    font-family: "Maven Pro"
+
+=link2
+    font-size: 16px
+    line-height: 1.19em
+    color: #6a6a77
+    font-weight: 500
+    text-decoration: none
+    &:hover
+        color: #756edc
+
+=icon
+    height: 16px
+    width: 33px
+    fill: #9fa4af
+    &:hover
+        fill: #756edc
+
+        
